@@ -841,7 +841,7 @@ func (c *CoreGethChainConfig) SetEthashEIP100BTransition(n *uint64) error {
 }
 
 func (c *CoreGethChainConfig) GetEthashECIP1041Transition() *uint64 {
-	if c.GetConsensusEngineType() != ctypes.ConsensusEngineT_Ethash {
+	if c.GetConsensusEngineType() != ctypes.ConsensusEngineT_Ethash && c.GetConsensusEngineType() != ctypes.ConsensusEngineT_Keccak {
 		return nil
 	}
 	return bigNewU64(c.DisposalBlock)
